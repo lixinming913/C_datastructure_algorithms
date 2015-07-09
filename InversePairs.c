@@ -31,9 +31,7 @@ InversePairsCore(int* data, int* copy, int start, int end)
     while(i >= start && j >= start + length + 1){
         if(data[ i ] > data[ j ]){
             copy[ indexcopy-- ] = data[ i-- ];
-            count += j - start - length;                  /*a[start+length+1...j...end为有序，
-                                                                     *如果a[i]>a[j]>...a[start+length-1]
-                                                                     */  
+            count += j - start - length;                  /*a[start+length+1...j...end为有序,如果a[i]>a[j]>...a[start+length-1]*/  
         } else {
             copy[ indexcopy-- ] = data[ j-- ];
         }
