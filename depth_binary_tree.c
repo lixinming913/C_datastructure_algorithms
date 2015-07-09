@@ -10,9 +10,9 @@
  struct 
  BinaryTreeNode
  {
-    int				    m_nValue;
-    BinaryTreeNode	*m_pLeft;
-    BinaryTreeNode	*m_pRight;
+    int                m_nValue;
+    BinaryTreeNode    *m_pLeft;
+    BinaryTreeNode    *m_pRight;
  };
  
  
@@ -55,6 +55,9 @@
     
     return (left_depth > right_depth) ? (left_depth + 1) : (right_depth + 1);        
  }
+ 
+ 
+ 
  
  
  BinaryTreeNode*
