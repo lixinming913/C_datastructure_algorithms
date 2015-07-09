@@ -13,21 +13,21 @@ int
 GetFirstK(int numbers[ ], int length, int k, int start, int end)
 {
     if(start > end)
-        return -1;                                                                                                /*没有k，返回-1*/
+        return -1;                                                                                               
     
     int mid = (start + end) / 2;
     int mid_data = numbers[mid ];
     
     if(mid_data == k) {
-        if( (mid == 0) || (mid > 0 && numbers[mid + 1] != k) ) {                               /*中间值是第一个k时，直接返回中间值*/
+        if( (mid == 0) || (mid > 0 && numbers[mid + 1] != k) ) {                             
             return mid;
         } 
         else 
             end = mid - 1;
     } 
-    else if( mid_data > k)                                                                                   /*中间值大于k，说明第一个k在中间位置的左侧*/
+    else if( mid_data > k)                                                                                  
         end = mid - 1;
-    else                                                                                                            /*中间值小于k，说明第一个k在中间位置的右侧*/
+    else                                                                                                           
         start = mid + 1;    
         
     return GetFirstK(numbers, length, k, start, end);
@@ -40,21 +40,21 @@ int
 GetLastK(int numbers[ ], int length, int k, int start, int end)
 {
     if(start > end)
-        return -1;																						          /*没有k，返回-1*/
+        return -1;																						         
     
     int mid = (start + end) / 2;
     int mid_data = numbers[mid ];
     
     if(mid_data == k) {
-        if( (mid == length - 1) || (mid < length - 1 && numbers[mid + 1] != k) ) {       /*中间值是最后一个k时，直接返回中间值*/
+        if( (mid == length - 1) || (mid < length - 1 && numbers[mid + 1] != k) ) {      
             return mid;
         } 
         else 
             start = mid + 1;
     } 
-    else if( mid_data > k)                                                                                   /*中间值大于k，说明最后一个k在中间位置的左侧*/
+    else if( mid_data > k)                                                                                   
         end = mid - 1;
-    else                                                                                                            /*中间值小于k，说明最后一个k在中间位置的右侧*/
+    else                                                                                                            
         start = mid + 1;    
         
     return GetFirstK(numbers, length, k, start, end);
