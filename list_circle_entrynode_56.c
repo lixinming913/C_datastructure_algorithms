@@ -8,7 +8,7 @@
 
 
 typedef struct node {
-    int                mkey;
+    int           m_key;
     struct node  *pnext;
 }node_t;
 
