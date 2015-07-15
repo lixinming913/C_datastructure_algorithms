@@ -12,7 +12,7 @@ bool IsExponential(char **str);
 bool 
 StrIsNum(char *str)
 {
-    if(str == NULL || *str == '\0')             /*空字符串*/
+    if(str == NULL || *str == '\0')                /*空字符串*/
         return false;
     
     if(*str == '+' || *str == '-')                 /*第一个字符是'+'或者'-'说明后面应该是是正或者负数*/
@@ -20,19 +20,19 @@ StrIsNum(char *str)
     
     bool numeric = true;                           /*默认是真*/
     
-    while(isdigit(*str) && *str != '\0')        /*字符串遍历到最后一个数字*/
+    while(isdigit(*str) && *str != '\0')           /*字符串遍历到最后一个数字*/
         ++str;
-    if(*str != '\0') {                                  /*数字后面还有字符的情况*/
-        if(*str == '.') {                               /*如果是浮点数，遍历后面的每一个字符，如果后面都是数字就是浮点数*/
+    if(*str != '\0') {                             /*数字后面还有字符的情况*/
+        if(*str == '.') {                          /*如果是浮点数，遍历后面的每一个字符，如果后面都是数字就是浮点数*/
             ++str;
             while(isdigit(*str) && *str != '\0')
                 ++str;
             if(*str == 'e' || *str == 'E')         /*浮点数后面还有科学计数法表示e时，看看后面符不符合科学计数法表示方式*/
                 numeric = IsExponential(&str);            
-        } else if (*str == 'e' || *str == 'E')  /*不是浮点数，是科学表示法时，再看看后面符不符合科学计数法表示方式*/
+        } else if (*str == 'e' || *str == 'E')     /*不是浮点数，是科学表示法时，再看看后面符不符合科学计数法表示方式*/
             numeric = IsExponential(&str);
         else
-            numeric = false;                         /*以上情况皆不符合，肯定就不是数*/
+            numeric = false;                       /*以上情况皆不符合，肯定就不是数*/
     }
     
     return numeric && *str == '\0';        
