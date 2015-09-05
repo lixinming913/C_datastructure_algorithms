@@ -34,7 +34,7 @@ int index_kmp(string T, string S, int pos)
     getnext(T, next);
     
     while(i <= S[0] && j <= T[0]) {
-        if(0 == j || S[i] == T[i]) {
+        if(0 == j || S[i] == T[j]) {
             i++;
             j++;
         }
