@@ -12,9 +12,9 @@ LCS(char *str1, char *str2)
     int len2 = strlen(str2);
     char flag[N][N] = {0};
     
-    char *p;       /*记录最长公共子串*/
-    int start;      /*start表明最长公共子串的起始点*/
-    int len  = 0;  /*len 表明最长公共子串长度*/
+    char *p;         /*记录最长公共子串*/
+    int start;        /*start表明最长公共子串的起始点*/
+    int len  = 0;    /*len 表明最长公共子串长度*/
     int end = len;  /*end 表明最长公共子串的终止点*/
     
     int i, j;
